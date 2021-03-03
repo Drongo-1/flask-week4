@@ -15,7 +15,7 @@ def new_post():
         post = Post(title=form.title.data, content=form.content.data, author=current_user)
         db.session.add(post)
         db.session.commit()
-        flash('Your post has been created!', 'success')
+        flash('Post created!', 'success')
         return redirect(url_for('main.home'))
     return render_template("post.html", title = "New post", form=form)
     
@@ -28,7 +28,7 @@ def post(post_id):
         comment = Comment(content=form.content.data)
         db.session.add(comment)
         #db.session.commit()
-        flash('Your comment has been posted!', 'success')
+        flash('Comment Posted!', 'success')
         return redirect(url_for('main.home'))
     return render_template('posted.html', title=post.title, post=post,form=form)
 
@@ -44,7 +44,7 @@ def update_post(post_id):
         post.title = form.title.data
         post.content = form.content.data
         db.session.commit()
-        flash('Your post has been updated!', 'success')
+        flash('Pitch Updated!', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
     elif request.method == 'GET':
         form.title.data = post.title
@@ -60,5 +60,5 @@ def delete_post(post_id):
         abort(403)
     db.session.delete(post)
     db.session.commit()
-    flash("Your post has been succesfully deleted", "success")
+    flash("Your pitch has been succesfully deleted", "success")
     return redirect(url_for("main.home"))

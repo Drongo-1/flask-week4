@@ -19,12 +19,12 @@ class RegistrationForm(FlaskForm):
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user:
-            raise ValidationError("That username is taken please choose another")
+            raise ValidationError("Username already taken")
         
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user:
-            raise ValidationError("That email is taken please choose another")
+            raise ValidationError("Email is unavailable")
             
     
 class LoginForm(FlaskForm):
@@ -46,13 +46,13 @@ class UpdateAccountForm(FlaskForm):
         if username.data != current_user.username: 
             user = User.query.filter_by(username=username.data).first()
             if user:
-                raise ValidationError("That username is taken please choose another")
+                raise ValidationError("username already taken")
         
     def validate_email(self, email):
         if email.data != current_user.email: 
             user = User.query.filter_by(email=email.data).first()
             if user:
-                raise ValidationError("That email is taken please choose another")
+                raise ValidationError("Email is registered with another account")
             
 class RequestResetForm(FlaskForm):
     email = StringField("Email", validators=[DataRequired(), Email()])
@@ -60,7 +60,7 @@ class RequestResetForm(FlaskForm):
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is None:
-            raise ValidationError("There is no account with email you must register first")  
+            raise ValidationError("Not register, please register tlogin")
         
 class ResetPasswordForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired()])
