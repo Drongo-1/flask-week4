@@ -21,6 +21,6 @@
     <p class="article-content">{{ post.content }}</p>
   </div>
     </button>
-    <button class="btn btn-outline-primary btn-small" type="button"><a href="{{ url_for('posts.post', post_id=post.id) }}">View Pitch</a></button>
+    <button class="btn btn-outline-primary btn-primary" type="button"><a href="{{ url_for('posts.post', post_id=post.id) }}">View Pitch</a></button>
 </article>
 {% endfor %} {% endblock content %}
