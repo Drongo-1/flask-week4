@@ -1,14 +1,14 @@
-# MORINGA PITCHH PROJECT
+# DAVY ONE MINUTE PITCH
 
-an application that allows users to use that one minute wisely. The users will submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them.
+This is a flask application that allows users to to post their pitch, and others users vote(upvote or downvote) their peeches.
 
 ## Author
 
-[Kiprotich Dominic Korir](https://github.com/kiprotichdominic)
+[Ngugi david](https://github.com/Drongo-1)
 
 # Description
 
-This is an application that allows users to sign in or sign up and post one minute pitches.It also allows the to upvote and downvote on different pitches.
+This is an application that allows users to sign in or sign up and post one minute pitche.It also allows users to upvote or downvote on different pitches.
 
 ## User Story
 
@@ -19,15 +19,7 @@ This is an application that allows users to sign in or sign up and post one minu
 - View pitches from the different categories.
 - Submit a pitch to a specific category of their choice.
 
-## BDD
 
-| Behaviour             |                Input                |                                                                       Output |
-| :-------------------- | :---------------------------------: | ---------------------------------------------------------------------------: |
-| Load the page         |          **On page load**           |                               Get all posts, Select between signup and login |
-| Select SignUp         | **Email**,**Username**,**Password** |                                                            Redirect to login |
-| Select Login          |    **Username** and **password**    | Redirect to page with app pitches based on categories and commenting section |
-| Select comment button |             **Comment**             |                                             Form that you input your comment |
-| Click on submit       |                                     |       Redirect to all comments tamplate with your comment and other comments |
 
 ## Development Installation
 
@@ -36,13 +28,13 @@ To get the code..
 1. Cloning the repository:
 
 ```bash
-https://github.com/kiprotichdominic/Moringa-Project-Pitch
+https://github.com/Drongo-1/flask-3 
 ```
 
 2. Move to the folder and install requirements
 
 ```bash
-cd pitch-world
+cd flask-3
 pip install -r requirements.txt
 ```
 
@@ -74,13 +66,13 @@ Open the application on your browser `127.0.0.1:5000`.
 
 ## Contact Information
 
-If you have any question or contributions, please email me at [kiprotichkorir36@gmail.com]
+If you have any question or contributions, please email me at [ngugidavid46q@gmail.com]
 
 ## Live Link To Project
 
-- [Moringa Pitch Project](https://moringapitchproject.herokuapp.com/home)
+- [Moringa Pitch Project](https://flaskprojectsam.herokuapp.com)
 
 ## License
 
 - _MIT License:_
-- Copyright (c) 2019 ** Kiprotich Dominic Korir**
+- Copyright (c) 2019 ** David Ngugi Kuria **
