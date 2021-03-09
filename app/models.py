@@ -50,7 +50,7 @@ class Post(db.Model):
     
 class Post1():
     id = StringField('post_id')
-    title = StringField('post_id')
+    title = StringField('title')
     date_posted = default=datetime.utcnow
     content = StringField('content')
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
