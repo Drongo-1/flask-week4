@@ -14,7 +14,7 @@ def new_post():
     form = PostForm()
     if form.validate_on_submit():
         post1 = Post(title=form.title.data, content=form.content.data, author=current_user)
-        dict_append.update(post)
+        dict_append.update(post1)
         # db.session.commit()
         flash('Post created!', 'success')
         return redirect(url_for('main.home'))
