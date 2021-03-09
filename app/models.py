@@ -49,7 +49,7 @@ class Post(db.Model):
         return f"User('{self.title}','{self.date_posted}')"
     
 class Post1():
-    id = StringField('post_id')
+    post_id = StringField('post_id')
     title = StringField('title')
     date_posted = default=datetime.utcnow
     content = StringField('content')
