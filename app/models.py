@@ -48,15 +48,15 @@ class Post(db.Model):
     def __repr__(self):
         return f"User('{self.title}','{self.date_posted}')"
     
-# class Post1():
-#     post_id = StringField('post_id')
-#     title = StringField('title')
-#     date_posted = default=datetime.utcnow
-#     content = StringField('content')
-#     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+class Post1():
+    post_id = StringField('post_id')
+    title = StringField('title')
+    date_posted = default=datetime.utcnow
+    content = StringField('content')
+    user_id = StringField(1)
     
-#     def __repr__(self):
-#         return f"User('{self.title}','{self.date_posted}')"
+    def __repr__(self):
+        return f"User('{self.title}','{self.date_posted}')"
     
     
 class Comment(db.Model):

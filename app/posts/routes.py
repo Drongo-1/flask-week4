@@ -2,8 +2,8 @@ from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from app import db
-# from app.dict import Dict1
-from app.models import Post, Comment 
+from app import dict
+from app.models import Post, Comment ,Post1
 from app.posts.forms import PostForm,CommentForm
 
 posts = Blueprint("posts",__name__)
@@ -13,10 +13,10 @@ posts = Blueprint("posts",__name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(title=form.title.data, content=form.content.data, author=current_user)
-        # dict_append.update(post)
-        db.session.add(User)
-        db.session.commit()
+        post1 = Post1(title=form.title.data, content=form.content.data, author=current_user)
+        dict["title"].append("titttle")
+
+        # db.session.commit()
         flash('Post created!', 'success')
         return redirect(url_for('main.home'))
     return render_template("post.html", title = "New post", form=form)
