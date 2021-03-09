@@ -1,4 +1,8 @@
 {% extends 'layout.html' %} {% block content %} {% for post in posts %}
+<!-- <h3>TRENDING POSTS</h3> -->
+<h3>MOST RECENTs</h3>
+
+<h3>MORE POSTS</h3>
 <article class="media content-section card m-4 p-3">
   <img
     class="rounded-circle article-img"
@@ -21,6 +25,10 @@
     <p class="article-content">{{ post.content }}</p>
   </div>
     </button>
-    <button class="btn btn-outline-primary btn-primary" type="button"><a href="{{ url_for('posts.post', post_id=post.id) }}">View Pitch</a></button>
+    <button class="btn btn-outline-primary btn-primary" type="button"><a href="{{ url_for('posts.post', post_id=post.id) }}">View Post</a></button>
+</article>
+
+<article>
+  <h3>RANDOM QUOTES</h3>
 </article>
 {% endfor %} {% endblock content %}

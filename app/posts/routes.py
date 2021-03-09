@@ -2,8 +2,8 @@ from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from app import db
-from app import dict
-from app.models import Post, Comment ,Post1
+# from app import dict
+from app.models import Post, Comment
 from app.posts.forms import PostForm,CommentForm
 
 posts = Blueprint("posts",__name__)
@@ -46,7 +46,7 @@ def update_post(post_id):
         post.title = form.title.data
         post.content = form.content.data
         db.session.commit()
-        flash('Pitch Updated!', 'success')
+        flash('Post Updated!', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
     elif request.method == 'GET':
         form.title.data = post.title
