@@ -25,9 +25,9 @@
       href="{{ url_for('static', filename='css/main.css') }}"
     />
     {% if title %}
-    <title>Davy one minute Pitch- {{title}}</title>
+    <title> Blog Post- {{title}}</title>
     {% else %}
-    <title>Davy one minute Pitch</title>
+    <title> Blog Post</title>
     {% endif %}
   </head>
   <body>
@@ -36,7 +36,11 @@
 {##}
   <main role="main" class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-4">
+        <h2>RANDOM QUOTES</h2>
+      </div>
+
+      <div class="col-md-8">
         {% with messages = get_flashed_messages(with_categories=true) %} {% if
         messages %} {% for category, message in messages %}
         <div class="alert alert-{{ category }}">
@@ -45,7 +49,6 @@
         {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock
         content %}
       </div>
-      
       </div>
     </div>
   </main>
