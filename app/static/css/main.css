@@ -53,3 +53,7 @@
   .fa:hover {
     color: darkblue;
   }
+  .quotess{
+    border:2px solid grey;
+    shape-outside: margin-box;
+  }
