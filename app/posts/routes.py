@@ -2,6 +2,7 @@ from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from app import db
+import random
 # from app import dict
 from app.models import Post, Comment
 from app.posts.forms import PostForm,CommentForm
@@ -64,3 +65,12 @@ def delete_post(post_id):
     db.session.commit()
     flash("Your pitch has been succesfully deleted", "success")
     return redirect(url_for("main.home"))
+@posts.route("/post/new", methods=['GET', 'POST'])
+
+def dictionaty():
+    dict = {1:{'post_id': 1, 'author': 'Ngugidavid', 'title': 'random', 'quote': 'This is a random quote'},
+           2:{'post_id': 2, 'author': 'Ngugidavid2', 'title': 'random2', 'quote': 'This is 2a random quote'}}
+    res = key, val = random.choice(list(dict.items()))
+    return render_template('layout.html')
+        # print("The random pair is : " + str(res))
+        # print(str(val['author']))
