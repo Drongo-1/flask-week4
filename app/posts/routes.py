@@ -72,7 +72,7 @@ def dictionaty():
            2:{'post_id': 2, 'author': 'Ngugidavid2', 'title': 'random2', 'quote': 'This is 2a random quote'}}
     res = key, val = random.choice(list(dict.items()))
     newpost=str(val['author'])
-    return render_template('index.html')
+    return redirect(url_for("main.home"))
 
         # print("The random pair is : " + str(res))
         # print(str(val['author']))
