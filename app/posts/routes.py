@@ -13,7 +13,7 @@ posts = Blueprint("posts",__name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        post1 = Post(title=form.title.data, content=form.content.data, author=current_user)
         dict_append.update(post)
         # db.session.commit()
         flash('Post created!', 'success')
