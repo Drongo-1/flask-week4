@@ -1,5 +1,7 @@
 from flask import render_template, request, Blueprint
 from app.models import Post
+from flask import render_template
+import random
 
 main = Blueprint("main",__name__)
 
@@ -15,4 +17,12 @@ def home():
 def about():
     return render_template("about.html", name="namess")
 
+@main.route("/")
+def quote():
+    dict1 = {1: {'author':'Ngugidavid', 'title':'authords'},
+            2: {'author':'Ngugidavid2', 'title':'authords2'}}
+    res=key, val=random.choice(list(dict1.items()))
+    author=str(val['author'])
+    title=str(val['title'])
+    return render_template("quotes.html", author=author, title=title)
     

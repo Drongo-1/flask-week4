@@ -4,8 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
-from flask import render_template
-import random
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
@@ -30,11 +28,3 @@ app.register_blueprint(people)
 app.register_blueprint(posts)
 app.register_blueprint(main)
 
-@app.route("/")
-def quote():
-    dict1 = {1: {'author':'Ngugidavid', 'title':'authords'},
-            2: {'author':'Ngugidavid2', 'title':'authords2'}}
-    res=key, val=random.choice(list(dict1.items()))
-    author=str(val['author'])
-    title=str(val['title'])
-    return render_template("quotes.html", author=author, title=title)
