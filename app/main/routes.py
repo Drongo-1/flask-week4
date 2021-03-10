@@ -1,5 +1,5 @@
 from flask import render_template, request, Blueprint
-from app.models import Post, Quotes
+from app.models import Post
 import random
 
 main = Blueprint("main",__name__)
