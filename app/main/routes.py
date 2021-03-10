@@ -17,6 +17,6 @@ def about():
 
 @main.route("/quotes")
 def quotes():
-    render_template("quotes",newauthor=newauthor)
+    render_template("quotes.html",newauthor=newauthor)
 
 
