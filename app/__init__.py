@@ -29,7 +29,7 @@ def quote():
             2:{'author':'Ngugidavid2', 'title':'authords2'}}
     res=key, val=random.choice(list(dict.items()))
     author=str(val['author'])
-    render_template("index.html", author="author")
+    render_template("quotes.html", author1="author1")
 
 app.register_blueprint(people)
 app.register_blueprint(posts)
