@@ -38,8 +38,6 @@
     <div class="row">
       <div class="col-md-4">
         <h3>RANDOM QUOTES</h3>
-      {% block quotes %} {% include 'quotes.html' %} 
-      {% endblock %}
 
       </div>
       <div class="col-md-8">
@@ -57,6 +55,8 @@
     <!-- Footer block  -->
     {% block footer %} {% include 'footer.html' %} {% endblock %}
     <!-- JQuery -->
+    {% block quotes %} {% include 'quotes.html' %} {% endblock %}
+
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
