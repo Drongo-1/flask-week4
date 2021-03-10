@@ -15,3 +15,11 @@ def home():
 def about():
     return render_template("about.html")
 
+@main.route("/quote")
+def quote():
+    dict = {1:{'author':'Ngugidavid', 'title':'authords'},
+            2:{'author':'Ngugidavid2', 'title':'authords2'}}
+    res=key, val=random.choice(list(dict.items()))
+    author=str(val['author'])
+    render_template("quotes.html", author=author)
+    
