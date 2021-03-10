@@ -6,4 +6,4 @@ class Dict1():
     res = key, val = random.choice(list(test_dict.items())) 
     # print("The random pair is : " + str(res)) 
     newauthor=str(val['author']) 
-    return render_template('/templates/layout.html', newauthor=newauthor)
+    return render_template('/templates/layout.html', newauthor=newauthor, val=val)
