@@ -2,8 +2,6 @@ from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from app import db
-import random
-# from app import dict
 from app.models import Post, Comment
 from app.posts.forms import PostForm,CommentForm
 
@@ -14,10 +12,9 @@ posts = Blueprint("posts",__name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post1 = Post1(title=form.title.data, content=form.content.data, author=current_user)
-        dict["title"].append("titttle")
-
-        # db.session.commit()
+        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
         flash('Post created!', 'success')
         return redirect(url_for('main.home'))
     return render_template("post.html", title = "New post", form=form)
@@ -63,5 +60,5 @@ def delete_post(post_id):
         abort(403)
     db.session.delete(post)
     db.session.commit()
-    flash("Your pitch has been succesfully deleted", "success")
+    flash("Your post has been succesfully deleted", "success")
     return redirect(url_for("main.home"))
