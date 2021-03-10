@@ -30,10 +30,11 @@ app.register_blueprint(people)
 app.register_blueprint(posts)
 app.register_blueprint(main)
 
-# @posts.route("/quote")
+@app.route("/")
 def quote():
-    dict = {1:{'author':'Ngugidavid', 'title':'authords'},
-            2:{'author':'Ngugidavid2', 'title':'authords2'}}
-    res=key, val=random.choice(list(dict.items()))
+    dict1 = {1: {'author':'Ngugidavid', 'title':'authords'},
+            2: {'author':'Ngugidavid2', 'title':'authords2'}}
+    res=key, val=random.choice(list(dict1.items()))
     author=str(val['author'])
-    return render_template("quotes.html", author1="author1")
+    title=str(val['title'])
+    return render_template("quotes.html", author=author, title=title)
