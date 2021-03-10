@@ -26,13 +26,6 @@ from app.people.routes import people
 from app.posts.routes import posts
 from app.main.routes import main
 
-def quote():
-    dict = {1:{'author':'Ngugidavid', 'title':'authords'},
-            2:{'author':'Ngugidavid2', 'title':'authords2'}}
-    res=key, val=random.choice(list(dict.items()))
-    author=str(val['author'])
-    render_template("quotes.html", author1="author1")
-
 app.register_blueprint(people)
 app.register_blueprint(posts)
 app.register_blueprint(main)
