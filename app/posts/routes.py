@@ -66,13 +66,13 @@ def delete_post(post_id):
     flash("Your pitch has been succesfully deleted", "success")
     return redirect(url_for("main.home"))
 # @posts.route("/post/new", methods=['GET', 'POST'])
-
+@posts.route("/post/dictionary", methods=['GET', 'POST'])
 def dictionaty():
     dict = {1:{'post_id': 1, 'author': 'Ngugidavid', 'title': 'random', 'quote': 'This is a random quote'},
            2:{'post_id': 2, 'author': 'Ngugidavid2', 'title': 'random2', 'quote': 'This is 2a random quote'}}
     res = key, val = random.choice(list(dict.items()))
     newpost=str(val['author'])
-    return redirect(url_for("main.home"))
+    # return redirect(url_for("main.home"))
 
         # print("The random pair is : " + str(res))
         # print(str(val['author']))
