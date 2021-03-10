@@ -2,7 +2,7 @@ from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from app import db
-from app.models import Post, Comment
+from app.models import Post, Comment ,Quotes
 from app.posts.forms import PostForm,CommentForm
 
 posts = Blueprint("posts",__name__)
@@ -63,3 +63,8 @@ def delete_post(post_id):
     flash("Your Post has been succesfully deleted", "success")
     return redirect(url_for("main.home"))
     
+
+@posts.route()
+def quotess():
+    render_template("quotes",newauthor=newauthor)
+

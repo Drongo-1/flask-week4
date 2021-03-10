@@ -69,4 +69,11 @@ class Comment(db.Model):
         return f"User('{self.date_posted}')"
     
 
-
+class Quotes():
+    dict1= {1:{'author': 'Ngugidavid', 'title': 'random', 'quote':'This is a random quote'},
+                   2:{'author': 'Ngugidavid2', 'title': 'random', 'quote':'This is a random quote'}} 
+    res = key, val = random.choice(list(dict1.items())) 
+    # print("The random pair is : " + str(res)) 
+    newauthor=str(val['author']) 
+    def __repr__(self):
+            return f"User('{self.newauthor')"
