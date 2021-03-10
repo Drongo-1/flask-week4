@@ -7,4 +7,3 @@
 #     res = key, val = random.choice(list(dict1.items())) 
 #     # print("The random pair is : " + str(res)) 
 #     newauthor=str(val['author']) 
-#     return render_template('quotes.html', newauthor=newauthor, val=val)
