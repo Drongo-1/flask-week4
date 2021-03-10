@@ -1,5 +1,6 @@
 from flask import render_template, request, Blueprint
 from app.models import Post, Quotes
+import random
 
 main = Blueprint("main",__name__)
 
@@ -14,9 +15,4 @@ def home():
 @main.route("/about")
 def about():
     return render_template("about.html")
-
-@main.route("/quotes")
-def quotes():
-    return render_template("quotes.html", newauthor="newauthor")
-
 
