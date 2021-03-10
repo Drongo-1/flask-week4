@@ -5,5 +5,5 @@ class Dict1():
     dict[posts] = {'post_id':1,'author': 'Ngugidavid', 'title': 'random', 'quote':'This is a random quote'}
     res = key, val = random.choice(list(test_dict.items())) 
     # print("The random pair is : " + str(res)) 
-    newauthor=(str(val['author'])) 
+    newauthor=str(val['author']) 
     return render_template('layout.html', newauthor=newauthor)
