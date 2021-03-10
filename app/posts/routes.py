@@ -2,6 +2,7 @@ from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from app import db
+import random
 from app.models import Post, Comment
 from app.posts.forms import PostForm,CommentForm
 
@@ -62,3 +63,12 @@ def delete_post(post_id):
     db.session.commit()
     flash("Your post has been succesfully deleted", "success")
     return redirect(url_for("main.home"))
+
+
+def quotes():
+    dict1= {1:{'author': 'Ngugidavid', 'title': 'random', 'quote':'This is a random quote'},
+                   2:{'author': 'Ngugidavid2', 'title': 'random', 'quote':'This is a random quote'}} 
+    res = key, val = random.choice(list(dict1.items())) 
+    # print("The random pair is : " + str(res)) 
+    newauthor=str(val['author']) 
+    return render_template('quotes.html', newauthor=newauthor, val=val)
