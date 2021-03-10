@@ -2,7 +2,6 @@ from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from app import db
-import random
 from app.models import Post, Comment
 from app.posts.forms import PostForm,CommentForm
 
@@ -61,7 +60,5 @@ def delete_post(post_id):
         abort(403)
     db.session.delete(post)
     db.session.commit()
-    flash("Your post has been succesfully deleted", "success")
+    flash("Your Post has been succesfully deleted", "success")
     return redirect(url_for("main.home"))
-
-
