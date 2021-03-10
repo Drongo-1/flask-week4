@@ -22,6 +22,7 @@ mail = Mail(app)
 
 from app.people.routes import people
 from app.posts.routes import posts
+from app.posts.routes import quotes
 from app.main.routes import main
 
 app.register_blueprint(people)
