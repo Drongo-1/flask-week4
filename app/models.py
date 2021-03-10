@@ -76,4 +76,4 @@ class Quotes():
     # print("The random pair is : " + str(res)) 
     newauthor=str(val['author']) 
     def __repr__(self):
-            return f"User('{self.newauthor')"
+            return {self.newauthor}

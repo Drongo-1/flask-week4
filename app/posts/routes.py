@@ -63,8 +63,3 @@ def delete_post(post_id):
     flash("Your Post has been succesfully deleted", "success")
     return redirect(url_for("main.home"))
     
-
-@posts.route()
-def quotess():
-    render_template("quotes",newauthor=newauthor)
-
