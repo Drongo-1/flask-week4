@@ -68,4 +68,3 @@ class Comment(db.Model):
     def __repr__(self):
         return f"User('{self.date_posted}')"
     
-

@@ -2,7 +2,7 @@ from flask import (render_template, url_for, flash,
                    redirect, request, abort, Blueprint)
 from flask_login import current_user, login_required
 from app import db
-from app.models import Post, Comment ,Quotes
+from app.models import Post, Comment
 from app.posts.forms import PostForm,CommentForm
 
 posts = Blueprint("posts",__name__)
@@ -44,7 +44,7 @@ def update_post(post_id):
         post.title = form.title.data
         post.content = form.content.data
         db.session.commit()
-        flash('Post Updated!', 'success')
+        flash('Pitch Updated!', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
     elif request.method == 'GET':
         form.title.data = post.title
@@ -60,6 +60,5 @@ def delete_post(post_id):
         abort(403)
     db.session.delete(post)
     db.session.commit()
-    flash("Your Post has been succesfully deleted", "success")
+    flash("Your pitch has been succesfully deleted", "success")
     return redirect(url_for("main.home"))
-    
